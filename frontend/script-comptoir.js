@@ -81,7 +81,7 @@ function afficherColonne(containerId, commandes, type) {
                 <div class="commande-articles">
                     ${afficherArticles(cmd.articles)}
                 </div>
-                <div class="commande-total">Total: ${cmd.total.toFixed(2)} €</div>
+                <div class="commande-total">Total: ${cmd.total.toFixed(2)} DT</div>
                 <div class="commande-actions">
                     ${getBoutonsAction(cmd, type)}
                 </div>
