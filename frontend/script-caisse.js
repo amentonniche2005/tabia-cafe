@@ -93,7 +93,7 @@ function mettreAJourSelectCommandes() {
     let html = '<option value="">-- Choisir une commande --</option>';
     for (let i = 0; i < commandesAEncaisser.length; i++) {
         const cmd = commandesAEncaisser[i];
-        html += `<option value="${cmd.id}">#${cmd.numero} - ${cmd.total.toFixed(2)} €</option>`;
+        html += `<option value="${cmd.id}">#${cmd.numero} - ${cmd.total.toFixed(2)} DT</option>`;
     }
     
     select.innerHTML = html;
@@ -154,7 +154,7 @@ function afficherDetailsCommande() {
             <p><strong>Articles:</strong></p>
             ${articlesHtml}
             <div class="total-detail">
-                Total à payer: ${commandeSelectionnee.total.toFixed(2)} €
+                Total à payer: ${commandeSelectionnee.total.toFixed(2)} DT
             </div>
         </div>
     `;
