@@ -39,7 +39,7 @@ const produits = [
         prix: 2.2, 
         categorie: "cafe", 
         description: "Café américain léger et aromatique", 
-        image: "https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=400&h=300&fit=crop"
+        image: "https://assets.beanbox.com/blog_images/AB7ud4YSE6nmOX0iGlgA.jpeg"
     },
     { 
         id: 5, 
@@ -47,7 +47,7 @@ const produits = [
         prix: 4.5, 
         categorie: "cafe", 
         description: "Café au chocolat avec crème fouettée", 
-        image: "https://images.unsplash.com/photo-1578314675249-a6910f80cc4e?w=400&h=300&fit=crop"
+        image: "https://ichef.bbci.co.uk/food/ic/food_16x9_1600/recipes/the_perfect_mocha_coffee_29100_16x9.jpg"
     },
     { 
         id: 6, 
@@ -55,7 +55,7 @@ const produits = [
         prix: 4.8, 
         categorie: "cafe", 
         description: "Café à la vanille avec caramel", 
-        image: "https://images.unsplash.com/photo-1485808191679-5f86510681a2?w=400&h=300&fit=crop"
+        image: "https://images.ctfassets.net/v601h1fyjgba/6NnFSs8SkNhTmEVMOqFqSZ/022db82e52a7a81fe3196877ebc0ef19/Caramel_Macchiato.jpg"
     },
 
     // ========== BOISSONS FRAÎCHES ==========
@@ -65,7 +65,7 @@ const produits = [
         prix: 4.5, 
         categorie: "boissons", 
         description: "Jus d'orange frais pressé - 100% pur fruit", 
-        image: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&h=300&fit=crop"
+        image: "https://numorning.com/cdn/shop/articles/Jus_d_orange_a35f1fe3-d0a4-4b80-9141-c1b6240fa6f1.jpg?v=1747657704"
     },
     { 
         id: 8, 
@@ -73,7 +73,7 @@ const produits = [
         prix: 3.5, 
         categorie: "boissons", 
         description: "Citron pressé maison, menthe fraîche", 
-        image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400&h=300&fit=crop"
+        image: "https://img.cuisineaz.com/660x495/2020/06/22/i154380-citronnade.jpeg"
     },
     { 
         id: 9, 
@@ -81,7 +81,7 @@ const produits = [
         prix: 5.5, 
         categorie: "boissons", 
         description: "Fraise, framboise, myrtille - Lait végétal", 
-        image: "https://images.unsplash.com/photo-1623065422902-30a2d299bbe4?w=400&h=300&fit=crop"
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrSpAnVcZ9iqxbYEGMQmZUHvMKFpqa66L-HQ&s"
     },
     { 
         id: 10, 
@@ -89,15 +89,15 @@ const produits = [
         prix: 5.5, 
         categorie: "boissons", 
         description: "Mangue, banane, lait de coco", 
-        image: "https://images.unsplash.com/photo-1610970881699-44a5587cabec?w=400&h=300&fit=crop"
+        image: "https://wordpress.potagercity.fr/wp-content/uploads/2019/06/RECETTE_smoothie_mangue_poire_banane-1.jpg"
     },
     { 
         id: 11, 
-        nom: "Ice Tea Pêche", 
+        nom: "Ice Tea ", 
         prix: 3.5, 
         categorie: "boissons", 
-        description: "Thé glacé à la pêche - Maison", 
-        image: "https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=400&h=300&fit=crop"
+        description: "Thé glacé - Maison", 
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMZ5YFZpeeSRo2OvrnM7oyB10Zm0Kj0dISjA&s"
     },
     { 
         id: 12, 
@@ -105,7 +105,7 @@ const produits = [
         prix: 5.0, 
         categorie: "boissons", 
         description: "Lait frappé au chocolat, chantilly", 
-        image: "https://images.unsplash.com/photo-1579954115545-a95591f28bfc?w=400&h=300&fit=crop"
+        image: "https://cbimg.cookinbreak.com/recettes/BFQBaw2UEhJO.webp "
     },
 
     // ========== SANDWICHS ==========
@@ -123,7 +123,7 @@ const produits = [
         prix: 6.5, 
         categorie: "sandwish", 
         description: "Jambon, fromage, laitue, mayonnaise", 
-        image: "https://images.unsplash.com/photo-1485808191679-5f86510681a2?w=400&h=300&fit=crop"
+        image: "https://png.pngtree.com/thumb_back/fw800/background/20251001/pngtree-ham-and-lettuce-sandwich-on-purple-background-image_19748617.webp"
     },
     { 
         id: 15, 
@@ -131,7 +131,7 @@ const produits = [
         prix: 6.0, 
         categorie: "sandwish", 
         description: "Thon, œuf, laitue, tomate", 
-        image: "https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=400&h=300&fit=crop"
+        image: "https://img.cuisineaz.com/660x495/2020/03/05/i152273-sandwich-thon-oeuf.jpeg"
     },
     { 
         id: 16, 
@@ -139,7 +139,7 @@ const produits = [
         prix: 7.5, 
         categorie: "sandwish", 
         description: "Poulet grillé, mozzarella, pesto", 
-        image: "https://images.unsplash.com/photo-1623334044303-241021148842?w=400&h=300&fit=crop"
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkGKY1kUFF8j1BOEgxSSo_X61Iz-FmU9ORbQ&s"
     },
     { 
         id: 17, 
@@ -147,7 +147,7 @@ const produits = [
         prix: 7.8, 
         categorie: "sandwish", 
         description: "Poulet, salade, parmesan, sauce Caesar", 
-        image: "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?w=400&h=300&fit=crop"
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmo2NIZJdfXkkBnCVOrPIMxiyX5SE7FfXQ0g&s"
     },
     { 
         id: 18, 
@@ -155,7 +155,7 @@ const produits = [
         prix: 8.0, 
         categorie: "sandwish", 
         description: "Pain de mie, poulet, bacon, salade, tomate", 
-        image: "https://images.unsplash.com/photo-1550304943-4f24f54ddde9?w=400&h=300&fit=crop"
+        image: "https://oliveoilsfromspain.org/wp-content/uploads/2024/01/Club-sandwich.jpg.webp"
     },
 
     // ========== PETIT DÉJEUNER ==========
@@ -165,7 +165,7 @@ const produits = [
         prix: 2.5, 
         categorie: "pd", 
         description: "Croissant feuilleté pur beurre - Fait maison", 
-        image: "https://images.unsplash.com/photo-1613478223719-2ab802602423?w=400&h=300&fit=crop"
+        image: "https://fieldandfire.com/wp-content/uploads/2020/03/ButterCroissant-scaled.jpg"
     },
     { 
         id: 20, 
@@ -173,7 +173,7 @@ const produits = [
         prix: 2.8, 
         categorie: "pd", 
         description: "Viennoiserie au chocolat - Pur beurre", 
-        image: "https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?w=400&h=300&fit=crop"
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNw7XE1AEV9QC8xtfz_kFp5FlGYXZWpV0WyA&s"
     },
     { 
         id: 21, 
@@ -181,7 +181,7 @@ const produits = [
         prix: 2.8, 
         categorie: "pd", 
         description: "Viennoiserie aux raisins et crème pâtissière", 
-        image: "https://images.unsplash.com/photo-1623334044303-241021148842?w=400&h=300&fit=crop"
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQE7LrRJrwDM6MgwFNH8Ph5wCbIZHqGX7ynhA&s"
     },
     { 
         id: 22, 
@@ -189,7 +189,7 @@ const produits = [
         prix: 3.0, 
         categorie: "pd", 
         description: "Brioche feuilletée - Spécialité maison", 
-        image: "https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=400&h=300&fit=crop"
+        image: "https://assets.afcdn.com/recipe/20250408/159512_w1024h576c1cx1893cy1900cxt0cyt0cxb4608cyb3456.jpeg"
     },
     { 
         id: 23, 
@@ -197,7 +197,7 @@ const produits = [
         prix: 6.0, 
         categorie: "pd", 
         description: "Cœur coulant au chocolat noir - Maison", 
-        image: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=400&h=300&fit=crop"
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzM7IMwCLrEUHy3hWUr0qJy0t66ZqWsgUozA&s"
     },
     { 
         id: 24, 
@@ -205,7 +205,7 @@ const produits = [
         prix: 5.5, 
         categorie: "pd", 
         description: "Dessert italien au café et mascarpone", 
-        image: "https://images.unsplash.com/photo-1510707577719-ae7c14805e3a?w=400&h=300&fit=crop"
+        image: "https://ichef.bbc.co.uk/ace/standard/1600/food/recipes/tiramisu_affogato_41821_16x9.jpg.webp"
     },
 
     // ========== PLATS CHAUDS ==========
@@ -215,7 +215,7 @@ const produits = [
         prix: 12.9, 
         categorie: "plat", 
         description: "Pâtes fraîches, crème, lardons, parmesan", 
-        image: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&h=300&fit=crop"
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQT4bOSfJU-gWQybKWsoJAv45gImZkT_qLnQw&s"
     },
     { 
         id: 26, 
@@ -223,7 +223,7 @@ const produits = [
         prix: 12.9, 
         categorie: "plat", 
         description: "Pâtes, sauce bolognaise maison, parmesan", 
-        image: "https://images.unsplash.com/photo-1622973536968-3ead9e780960?w=400&h=300&fit=crop"
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSQtckTf61IhNq2Isx9qeN9zNz9hJOimJ26w&s"
     },
     { 
         id: 27, 
@@ -231,7 +231,7 @@ const produits = [
         prix: 10.5, 
         categorie: "plat", 
         description: "Œufs, merguez, pommes de terre sautées", 
-        image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400&h=300&fit=crop"
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBCJfRabJ5Ze8fDAEVC-xh8NBL7z83zxqWSQ&s"
     },
     { 
         id: 28, 
@@ -239,7 +239,7 @@ const produits = [
         prix: 11.9, 
         categorie: "plat", 
         description: "Escalope de poulet panée, frites maison", 
-        image: "https://images.unsplash.com/photo-1550304943-4f24f54ddde9?w=400&h=300&fit=crop"
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-K0EdmQCqCutD1FLMn6vtrrCnfddQb2BcEg&s"
     },
     { 
         id: 29, 
@@ -247,7 +247,7 @@ const produits = [
         prix: 13.5, 
         categorie: "plat", 
         description: "Viande grillée, salade, frites, sauce", 
-        image: "https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=400&h=300&fit=crop"
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWg_nS6G8fo6NBZ49JbmJQmPeiyCfwyU_QXw&s"
     },
     { 
         id: 30, 
@@ -255,7 +255,7 @@ const produits = [
         prix: 9.9, 
         categorie: "plat", 
         description: "Poulet grillé, salade, parmesan, croûtons", 
-        image: "https://images.unsplash.com/photo-1550304943-4f24f54ddde9?w=400&h=300&fit=crop"
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSwgb7gCfAyCUUZQD_mxq6Wos6kZg2r6-Wlw&s"
     }
 ];
 // ========== FONCTIONS API ==========

@@ -51,7 +51,7 @@ function afficherProduits() {
                 <div class="item-info">
                     <h3>${p.nom}</h3>
                     <p>${p.description}</p>
-                    <div class="price">${p.prix} €</div>
+                    <div class="price">${p.prix} DT</div>
                     <button class="add-to-cart" onclick="ajouterAuPanier(${p.id})">
                         🛒 Ajouter
                     </button>
@@ -240,7 +240,7 @@ function afficherMesCommandes(commandes) {
                 <div class="commande-articles">
                     ${cmd.articles.map(a => `<div>${a.quantite}x ${a.nom}</div>`).join('')}
                 </div>
-                <div class="commande-total">Total: ${cmd.total.toFixed(2)} €</div>
+                <div class="commande-total">Total: ${cmd.total.toFixed(2)} DT</div>
             </div>
         `;
     }
