@@ -109,7 +109,7 @@ function afficherPanier() {
     
     if (panier.length === 0) {
         conteneur.innerHTML = "<p>Panier vide</p>";
-        if (totalElement) totalElement.textContent = "Total: 0 €";
+        if (totalElement) totalElement.textContent = "Total: 0 DT";
         return;
     }
     
@@ -122,7 +122,7 @@ function afficherPanier() {
             <div class="cart-item">
                 <div>
                     <h4>${article.nom}</h4>
-                    <div>${article.prix} €</div>
+                    <div>${article.prix} DT</div>
                 </div>
                 <div>
                     <button class="quantity-btn" onclick="changerQuantite(${article.id}, -1)">-</button>

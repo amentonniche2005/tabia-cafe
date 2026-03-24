@@ -66,7 +66,7 @@ function afficherCommandesAEncaisser() {
                 <div class="commande-date">📅 ${cmd.date}</div>
                 <div class="commande-location">🪑 ${tableInfo}</div>
                 <div class="commande-total" style="font-weight: bold; color: #e67e22;">
-                    Total: ${cmd.total.toFixed(2)} €
+                    Total: ${cmd.total.toFixed(2)} DT
                 </div>
                 <div class="commande-articles" style="margin-top: 0.5rem;">
                     ${afficherArticlesSimples(cmd.articles)}
