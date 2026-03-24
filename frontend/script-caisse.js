@@ -141,7 +141,7 @@ function afficherDetailsCommande() {
     for (let i = 0; i < commandeSelectionnee.articles.length; i++) {
         const article = commandeSelectionnee.articles[i];
         const sousTotal = article.prix * article.quantite;
-        articlesHtml += `<li>${article.quantite}x ${article.nom} - ${sousTotal.toFixed(2)} €</li>`;
+        articlesHtml += `<li>${article.quantite}x ${article.nom} - ${sousTotal.toFixed(2)} DT</li>`;
     }
     articlesHtml += "</ul>";
     
@@ -175,7 +175,7 @@ async function effectuerPaiement(mode) {
     
     const confirmation = confirm(
         `🏪 Commande #${commandeSelectionnee.numero}\n` +
-        `💰 Total: ${commandeSelectionnee.total.toFixed(2)} €\n` +
+        `💰 Total: ${commandeSelectionnee.total.toFixed(2)} DT\n` +
         `💳 Mode: ${modeTexte[mode]}\n\n` +
         `Confirmer l'encaissement ?`
     );
@@ -270,7 +270,7 @@ function afficherHistorique() {
             <div class="vente-item">
                 <div class="vente-header">
                     <span>#${vente.numero}</span>
-                    <span style="color: #e67e22;">${vente.total.toFixed(2)} €</span>
+                    <span style="color: #e67e22;">${vente.total.toFixed(2)} DT</span>
                 </div>
                 <div class="vente-details">
                     ${vente.mode} - ${vente.date} - ${tableInfo}

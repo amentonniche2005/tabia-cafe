@@ -135,7 +135,7 @@ function afficherPanier() {
     }
     
     conteneur.innerHTML = html;
-    if (totalElement) totalElement.textContent = "Total: " + total.toFixed(2) + " €";
+    if (totalElement) totalElement.textContent = "Total: " + total.toFixed(2) + " DT";
 }
 
 function changerQuantite(id, changement) {
