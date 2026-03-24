@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TA'BIA COFFE SHOP</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+    <style>
+        /* Styles supplémentaires */
+        .user-badge {
+            background: #e67e22;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .info-message {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            display: inline-block;
+            margin-top: 1rem;
+        }
+
+        .tracking-section {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+
+        .tracking-section h2 {
+            margin-bottom: 1rem;
+            color: #2c3e2f;
+        }
+
+        .commandes-list {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .commande-card {
+            background: white;
+            border-radius: 10px;
+            padding: 1rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .commande-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 0.7rem;
+            font-weight: bold;
+        }
+
+        .status-attente {
+            background: #f39c12;
+            color: white;
+        }
+
+        .status-preparation {
+            background: #3498db;
+            color: white;
+        }
+
+        .status-termine {
+            background: #27ae60;
+            color: white;
+        }
+
+        .commande-date {
+            font-size: 0.8rem;
+            color: #7f8c8d;
+            margin-bottom: 0.5rem;
+        }
+
+        .commande-total {
+            font-weight: bold;
+            text-align: right;
+            margin-top: 0.5rem;
+            padding-top: 0.5rem;
+            border-top: 1px solid #e9ecef;
+        }
+
+        .empty-message {
+            text-align: center;
+            color: #7f8c8d;
+            padding: 2rem;
+        }
+
+        .price {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #e67e22;
+            margin: 0.5rem 0;
+        }
+
+        .menu-item {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>☕ TA'BIA</h1>
+                <p>Commandez en ligne</p>
+            </div>
+            <div class="nav-right">
+                <div class="user-badge">👤 Client</div>
+                <div class="panier-" id="panier">
+                    🛒 Panier
+                    <span class="conteur-panier" id="conteurpanier">0</span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Commandez en ligne</h1>
+            <p>Préparez votre commande et venez la chercher</p>
+            <div class="info-message">
+                💡 Vos commandes sont transmises directement au comptoir
+            </div>
+        </div>
+    </div>
+
+    <div class="categories">
+        <button class="category-btn active" data-category="all">📋 Tous</button>
+        <button class="category-btn" data-category="cafe">☕ Nos Cafés</button>
+        <button class="category-btn" data-category="boissons">🍹 Nos Boissons</button>
+        <button class="category-btn" data-category="sandwish">🍔 Nos Sandwiches</button>
+        <button class="category-btn" data-category="pd">🥐 Nos Petit Déjeuner</button>
+        <button class="category-btn" data-category="plat">🍽 Nos Plats</button>
+    </div>
+
+    <div class="menu-section">
+        <div class="menu-grid" id="menuGrid"></div>
+    </div>
+
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-content">
+            <div class="cart-header">
+                <h2>Votre Panier</h2>
+
+                <span class="close-cart" id="closeCart">&times;</span>
+            </div>
+            <div id="cartItems" class="cart-items"></div>
+            <div class="cart-total" id="cartTotal">Total: 0 DT</div>
+            <div class="table">
+                <label for="choix">Sélectionnez votre table :</label>
+                <select id="choix" name="choix">
+                    <option value="1">Table 1</option>
+                    <option value="2" selected>Table 2</option>
+                    <option value="3">Table 3</option>
+                </select>
+            </div>
+            <button class="checkout-btn" id="checkoutBtn">📱 Commander maintenant</button>
+        </div>
+    </div>
+
+    <div class="tracking-section">
+        <h2>📦 Mes commandes</h2>
+        <div id="mesCommandes" class="commandes-list"></div>
+    </div>
+
+    <footer>
+        <p>23 Avenue souk el-asr</p>
+        <p>Copyright © tout droit réservés</p>
+        <p>tabia@gmail.com</p>
+        <p>71 234 043/56 873 298</p>
+    </footer>
+    <script src="data.js"></script>
+    <script src="script-client.js"></script>
+</body>
+
+</html>

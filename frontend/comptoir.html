@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TA'BIA - Comptoir</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+    <style>
+        .comptoir-badge {
+            background: #3498db;
+            padding: 5px 10px;
+            border-radius: 20px;
+        }
+        
+        .dashboard {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .stat-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #e67e22;
+        }
+        
+        .commandes-container {
+            max-width: 1400px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+        
+        .colonne {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 1rem;
+            min-height: 500px;
+        }
+        
+        .colonne h2 {
+            text-align: center;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #e67e22;
+        }
+        
+        .commande-card {
+            background: white;
+            border-radius: 10px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .commande-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+            border-bottom: 1px solid #e9ecef;
+            padding-bottom: 0.5rem;
+        }
+        
+        .commande-numero {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #e67e22;
+        }
+        
+        .client-badge {
+            background: #e67e22;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.7rem;
+        }
+        
+        .table-badge {
+            background: #3498db;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.7rem;
+        }
+        
+        .commande-actions {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        
+        .btn-preparer {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 0.5rem;
+            border-radius: 5px;
+            cursor: pointer;
+            flex: 1;
+        }
+        
+        .btn-terminer {
+            background: #27ae60;
+            color: white;
+            border: none;
+            padding: 0.5rem;
+            border-radius: 5px;
+            cursor: pointer;
+            flex: 1;
+        }
+        
+        .refresh-btn {
+            background: #e67e22;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            cursor: pointer;
+            margin-left: 1rem;
+        }
+        
+        .empty-message {
+            text-align: center;
+            color: #7f8c8d;
+            padding: 2rem;
+        }
+        
+        @media (max-width: 900px) {
+            .commandes-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>👨‍🍳 TA'BIA - Comptoir</h1>
+                <p>Gestion des préparations</p>
+            </div>
+            <div class="nav-right">
+                <div class="comptoir-badge">🔧 Comptoir</div>
+                <button class="refresh-btn" onclick="rafraichirCommandes()">🔄 Rafraîchir</button>
+            </div>
+        </nav>
+    </header>
+
+    <div class="dashboard">
+        <div class="stats">
+            <div class="stat-card">
+                <h3>En attente</h3>
+                <div class="stat-number" id="nbAttente">0</div>
+            </div>
+            <div class="stat-card">
+                <h3>En préparation</h3>
+                <div class="stat-number" id="nbPreparation">0</div>
+            </div>
+            <div class="stat-card">
+                <h3>Terminées</h3>
+                <div class="stat-number" id="nbTerminees">0</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="commandes-container">
+        <div class="colonne">
+            <h2>📋 En attente</h2>
+            <div id="commandesAttente" class="commandes-list"></div>
+        </div>
+        
+        <div class="colonne">
+            <h2>🍳 En préparation</h2>
+            <div id="commandesPreparation" class="commandes-list"></div>
+        </div>
+        
+        <div class="colonne">
+            <h2>✅ Terminées</h2>
+            <div id="commandesTerminees" class="commandes-list"></div>
+        </div>
+    </div>
+
+    <footer>
+        <p>TA'BIA - Interface Comptoir - Mise à jour automatique</p>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="script-comptoir.js"></script>
+</body>
+</html>

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TA'BIA - Caisse</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Styles spécifiques caisse */
+        .caisse-badge {
+            background: #27ae60;
+            padding: 5px 10px;
+            border-radius: 20px;
+        }
+        
+        .stats-caisse {
+            background: #27ae60;
+            padding: 5px 15px;
+            border-radius: 20px;
+            margin-left: 1rem;
+        }
+        
+        .caisse-container {
+            max-width: 1400px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+        
+        .colonne-commandes, .colonne-caisse {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 1.5rem;
+        }
+        
+        .colonne-commandes h2, .colonne-caisse h2 {
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #e67e22;
+        }
+        
+        .commandes-list {
+            max-height: 500px;
+            overflow-y: auto;
+        }
+        
+        .commande-card-caisse {
+            background: white;
+            border-radius: 10px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+        
+        .commande-card-caisse:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .commande-card-caisse.selected {
+            border-color: #e67e22;
+            background: #fff5e8;
+        }
+        
+        .caisse-panel {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .commande-select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin: 0.5rem 0 1rem 0;
+            font-size: 1rem;
+        }
+        
+        .details-commande {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 5px;
+            margin: 1rem 0;
+        }
+        
+        .paiement-section {
+            margin-top: 1.5rem;
+            padding-top: 1rem;
+            border-top: 1px solid #e9ecef;
+        }
+        
+        .paiement-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .paiement-btn {
+            flex: 1;
+            padding: 0.8rem;
+            border: none;
+            border-radius: 5px;
+            background: #e67e22;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        
+        .paiement-btn:hover {
+            background: #d35400;
+            transform: scale(1.02);
+        }
+        
+        .historique-list {
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        
+        .vente-item {
+            background: white;
+            border-radius: 5px;
+            padding: 0.8rem;
+            margin-bottom: 0.5rem;
+            border-left: 3px solid #27ae60;
+        }
+        
+        .vente-header {
+            display: flex;
+            justify-content: space-between;
+            font-weight: bold;
+        }
+        
+        .vente-details {
+            font-size: 0.8rem;
+            color: #7f8c8d;
+            margin-top: 0.3rem;
+        }
+        
+        .refresh-btn {
+            background: #e67e22;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            cursor: pointer;
+            margin-left: 1rem;
+        }
+        
+        .empty-message {
+            text-align: center;
+            color: #7f8c8d;
+            padding: 2rem;
+        }
+        
+        .client-badge {
+            background: #e67e22;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.7rem;
+        }
+        
+        .total-detail {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #e67e22;
+            text-align: right;
+            margin-top: 1rem;
+            padding-top: 0.5rem;
+            border-top: 2px solid #e67e22;
+        }
+        
+        @media (max-width: 900px) {
+            .caisse-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>💰 TA'BIA - Caisse</h1>
+                <p>Gestion des encaissements</p>
+            </div>
+            <div class="nav-right">
+                <div class="caisse-badge">💵 Caissier</div>
+                <div class="stats-caisse">
+                    💰 Chiffre: <span id="caissierTotal">0</span> €
+                </div>
+                <button class="refresh-btn" onclick="rafraichirCaisse()">🔄 Rafraîchir</button>
+            </div>
+        </nav>
+    </header>
+
+    <div class="caisse-container">
+        <div class="colonne-commandes">
+            <h2>📋 Commandes à encaisser (terminées)</h2>
+            <div id="commandesEncaisser" class="commandes-list"></div>
+        </div>
+
+        <div class="colonne-caisse">
+            <h2>💵 Encaissement</h2>
+            <div class="caisse-panel">
+                <div class="commande-selection">
+                    <label><strong>Sélectionner une commande :</strong></label>
+                    <select id="selectCommande" class="commande-select">
+                        <option value="">-- Choisir une commande --</option>
+                    </select>
+                </div>
+                
+                <div id="detailsCommande" class="details-commande">
+                    <p style="color: #7f8c8d;">Sélectionnez une commande pour voir les détails</p>
+                </div>
+                
+                <div class="paiement-section">
+                    <h3>Mode de paiement</h3>
+                    <div class="paiement-buttons">
+                        <button class="paiement-btn" onclick="effectuerPaiement('especes')">💵 Espèces</button>
+                        <button class="paiement-btn" onclick="effectuerPaiement('carte')">💳 Carte bancaire</button>
+                        <button class="paiement-btn" onclick="effectuerPaiement('mobile')">📱 Mobile</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="historique-section">
+                <h2>📊 Historique des ventes</h2>
+                <div id="historiqueVentes" class="historique-list"></div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>TA'BIA - Interface Caisse - Mise à jour automatique</p>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="script-caisse.js"></script>
+</body>
+</html>
