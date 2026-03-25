@@ -554,7 +554,8 @@ footer {
     }
     .table{
 
-      top: -40px;
+      top: -80px;
+      align-items: center;
     }
 }
 
