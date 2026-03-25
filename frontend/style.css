@@ -438,7 +438,7 @@ footer {
     
     nav {
         flex-direction: column;
-        gap: 0.5rem;
+        gap: 0.3rem;
     }
     
     .logo h1 {
@@ -473,12 +473,13 @@ footer {
         font-size: 0.9rem;
     }
     
-
-    
-    .category-btn {
-        padding: 0.5rem 1rem;
-        font-size: 0.8rem;
+    .categories {
+        gap: 0.5rem;
+        padding: 0 1rem;
+        margin: 1.5rem auto;
     }
+    
+
     
     .menu-section {
         padding: 0 1rem;
@@ -550,7 +551,7 @@ footer {
     }
     .table{
       
-      top: -20px;
+      top: -28px;
       
       
     }
