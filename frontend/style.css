@@ -428,3 +428,264 @@ footer {
   transform: scale(1.02);
   box-shadow: 0 5px 15px rgba(94, 67, 45, 0.3);
 }
+/* ========== RESPONSIVE DESIGN ========== */
+
+/* Pour les très petits écrans (téléphones) */
+@media (max-width: 576px) {
+    header {
+        padding: 0.5rem;
+    }
+    
+    nav {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .logo h1 {
+        font-size: 1.2rem;
+        text-align: center;
+    }
+    
+    .logo p {
+        font-size: 0.7rem;
+        text-align: center;
+    }
+    
+    .nav-right {
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    .panier- {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+    
+    .hero {
+        height: 250px;
+    }
+    
+    .hero-content h1 {
+        font-size: 1.5rem;
+    }
+    
+    .hero-content p {
+        font-size: 0.9rem;
+    }
+    
+    .categories {
+        gap: 0.5rem;
+        padding: 0 1rem;
+        margin: 1.5rem auto;
+    }
+    
+    .category-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
+    }
+    
+    .menu-section {
+        padding: 0 1rem;
+    }
+    
+    .menu-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .cart-content {
+        width: 95%;
+        margin: 10px auto;
+        padding: 1rem;
+    }
+    
+    .cart-item {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+    
+    .cart-item > div:last-child {
+        display: flex;
+        gap: 0.5rem;
+        justify-content: center;
+    }
+    
+    .paiement-buttons {
+        flex-direction: column;
+    }
+    
+    .caisse-container {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 0 1rem;
+    }
+    
+    .commandes-container {
+        grid-template-columns: 1fr;
+        padding: 0 1rem;
+    }
+    
+    .stats {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+        padding: 0 1rem;
+    }
+    
+    .stat-card {
+        padding: 1rem;
+    }
+    
+    .stat-number {
+        font-size: 1.5rem;
+    }
+    
+    footer {
+        padding: 1rem;
+        font-size: 0.8rem;
+    }
+    
+    .notification {
+        bottom: 10px;
+        right: 10px;
+        left: 10px;
+        text-align: center;
+        font-size: 0.8rem;
+    }
+}
+
+/* Pour les tablettes */
+@media (min-width: 577px) and (max-width: 768px) {
+    .menu-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    
+    .categories {
+        gap: 0.5rem;
+    }
+    
+    .category-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
+    }
+    
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .stats {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .commandes-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Pour les écrans moyens (tablettes paysage) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .menu-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .caisse-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Pour les grands écrans */
+@media (min-width: 1200px) {
+    .menu-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* ========== AMÉLIORATIONS MOBILE ========== */
+
+/* Boutons plus faciles à toucher sur mobile */
+button, 
+.category-btn, 
+.add-to-cart, 
+.checkout-btn,
+.quantity-btn,
+.remove-item,
+.paiement-btn,
+.refresh-btn,
+.btn-preparer,
+.btn-terminer {
+    min-height: 44px;
+    cursor: pointer;
+    touch-action: manipulation;
+}
+
+/* Espacement pour les liens cliquables */
+a, button, [onclick] {
+    cursor: pointer;
+}
+
+/* Scroll fluide */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Amélioration de la lisibilité sur mobile */
+body {
+    font-size: 16px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Cartes adaptées pour mobile */
+.commande-card,
+.menu-item,
+.cart-item,
+.vente-item {
+    border-radius: 12px;
+    margin-bottom: 0.75rem;
+}
+
+/* Modal responsive */
+.cart-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.cart-content {
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+/* Header sticky amélioré */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(10px);
+}
+
+/* Amélioration du menu des catégories (scroll horizontal sur mobile) */
+@media (max-width: 768px) {
+    .categories {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        gap: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
+    
+    .category-btn {
+        flex: 0 0 auto;
+        scroll-snap-align: start;
+    }
+}
