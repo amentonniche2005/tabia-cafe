@@ -128,7 +128,7 @@ function afficherPanier() {
                     <button class="quantity-btn" onclick="changerQuantite(${article.id}, -1)">-</button>
                     <span>${article.quantite}</span>
                     <button class="quantity-btn" onclick="changerQuantite(${article.id}, 1)">+</button>
-                    <button class="remove-item" onclick="supprimerDuPanier(${article.id})">🗑️</button>
+                    <button class="remove-item" onclick="supprimerDuPanier(${article.id})">Supprimer</button>
                 </div>
             </div>
         `;

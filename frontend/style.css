@@ -552,6 +552,10 @@ footer {
         text-align: center;
         font-size: 0.8rem;
     }
+    .table{
+
+      top: -40px;
+    }
 }
 
 /* Pour les tablettes */
