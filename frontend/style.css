@@ -48,6 +48,7 @@ nav {
   padding: 0.8rem 1.2rem;
   border-radius: 50px;
   transition: all 0.3s;
+  
 }
 
 .panier-:hover {
@@ -484,7 +485,7 @@ footer {
     .panier- {
         padding: 0.5rem 1rem;
         font-size: 0.9rem;
-        display: none;
+        
     }
     
     .hero {
