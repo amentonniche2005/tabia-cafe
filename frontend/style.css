@@ -443,7 +443,7 @@ footer {
     }
     
     .logo h1 {
-        font-size: 2.3rem;
+        font-size: 2rem;
         text-align: right;
         animation: fadeInUp 0.8s ease;
     }
@@ -453,11 +453,7 @@ footer {
         text-align: center;
         animation: fadeInUp 0.8s ease;
     }
-    .logo h5{
-      font-size: 2.2rem;
-        text-align: right;
-      animation: fadeInUp 0.8s ease;
-    }
+
 
 
 @keyframes fadeInUp {
