@@ -698,7 +698,7 @@ header {
     backdrop-filter: blur(10px);
 }
 
-/* Amélioration du menu des catégories (scroll horizontal sur mobile) */
+/* Amélioration du menu des catégories (scroll horizontal sur mobile) 
 @media (max-width: 768px) {
     .categories {
         display: flex;
@@ -714,4 +714,4 @@ header {
         flex: 0 0 auto;
         scroll-snap-align: start;
     }
-}
+}*/
