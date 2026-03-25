@@ -509,7 +509,7 @@ footer {
     .cart-item {
         flex-direction: column;
         gap: 0.5rem;
-        text-align: center;
+        
     }
     
     .cart-item > div:last-child {
