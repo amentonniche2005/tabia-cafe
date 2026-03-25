@@ -450,6 +450,16 @@ footer {
         font-size: 0.7rem;
         text-align: center;
     }
+        .categories {
+        gap: 0.5rem;
+        padding: 0 1rem;
+        margin: 1.5rem auto;
+    }
+    
+    .category-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
+    }
     
     .nav-right {
         width: 100%;
@@ -565,10 +575,7 @@ footer {
     }
     
     
-    .category-btn {
-        padding: 0.5rem 1rem;
-        font-size: 0.8rem;
-    }
+
     
     .hero-content h1 {
         font-size: 2rem;
