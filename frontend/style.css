@@ -442,7 +442,7 @@ footer {
     }
     
     .logo h1 {
-        font-size: 1.7rem;
+        font-size: 2rem;
         text-align: center;
     }
     
@@ -473,11 +473,7 @@ footer {
         font-size: 0.9rem;
     }
     
-    .categories {
-        gap: 0.5rem;
-        padding: 0 1rem;
-        margin: 1.5rem auto;
-    }
+
     
     .category-btn {
         padding: 0.5rem 1rem;
@@ -554,7 +550,7 @@ footer {
     }
     .table{
       
-      dow: -20px;
+      top: -20px;
       
       
     }
@@ -567,9 +563,6 @@ footer {
         gap: 1rem;
     }
     
-    .categories {
-        gap: 0.5rem;
-    }
     
     .category-btn {
         padding: 0.5rem 1rem;
